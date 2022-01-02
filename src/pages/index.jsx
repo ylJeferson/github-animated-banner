@@ -1,17 +1,14 @@
 import {useEffect} from 'react'
 
-export default function Index() {
-    return(
-        <div>
-          <div>
-            {/* <embed width="100%" src="/api/svg" type="image/svg+xml"/>  */}
-            <img src="/api/html" />
-          </div>
+
+export default function Redirect() {
+    useEffect(() => {
+        window.location.assign('/demo')
+    })
     
-          {/* <a href="/api/image-generator?title=Imagem Gerada">
-            /api/image-generator?title=Imagem Gerada
-          </a> */}
-        </div>
+    return(
+        <>
+        </>
     )
 }
 
