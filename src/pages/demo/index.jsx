@@ -4,7 +4,7 @@ import style from '../../styles/demo.module.css'
 export default function Demo() {
     const [animation, setAnimation] = useState({index: -1, value: ''})
     const [datafield, setDataField] = useState({bgcolor: '', name: '', namefont: '', namecolor: '', anim: '', animfont: '', animcolor: ''});
-    const [banner, setBanner] = useState({bgcolor: 'transparent', name: 'Jeferson', namefont: 'Tangerine', namecolor: '#ff5779', anim: ['In search of development', 'Enjoy!!!'], animfont: 'Varela Round', animcolor: '#6941d3'});
+    const [banner, setBanner] = useState({bgcolor: 'transparent', name: 'Hello I\'m Jeferson', namefont: 'Tangerine', namecolor: '#ff5779', anim: ['I made this banner', 'for you!!!', 'to use on your', 'github profile.', 'Liked!?', 'Give a little star', 'to this project', 'Thanks for reading this far', 'Enjoy!!!'], animfont: 'Varela Round', animcolor: '#6941d3'});
 
     function ChangeDataField(e) {
         setDataField({...datafield, [e.target.name]: e.target.value})
@@ -37,8 +37,14 @@ export default function Demo() {
         setAnimation({...animation, index: -1})
     }
     
-    function Link() {
+    function TestLink() {
         navigator.clipboard.writeText((window.location.origin + '/api' + '?bgcolor=' + banner.bgcolor + '&name=' + banner.name + '&namefont=' + banner.namefont + '&namecolor=' + banner.namecolor + '&anim=' + banner.anim.join(";") + '&animfont=' + banner.animfont + '&animcolor=' + banner.animcolor).replaceAll(' ', '%20').replaceAll('#', '%23'));
+    }
+    
+    function GitHubLink() {
+        let Link = ((window.location.origin + '/api' + '?bgcolor=' + banner.bgcolor + '&name=' + banner.name + '&namefont=' + banner.namefont + '&namecolor=' + banner.namecolor + '&anim=' + banner.anim.join(";") + '&animfont=' + banner.animfont + '&animcolor=' + banner.animcolor).replaceAll(' ', '%20').replaceAll('#', '%23'))
+        console.log(Link)
+        navigator.clipboard.writeText('[![' + banner.name + '\'s GitHub Banner](' + Link + ')](https://github.com/ylJeferson/github-animated-banner)')
     }
 
     function WriteONOFFAnimation() {
@@ -130,7 +136,8 @@ export default function Demo() {
                 </div>
 
                 <button className={style.buttons} onClick={Preview}>Preview</button>
-                <button className={style.buttons} onClick={Link}>Link</button>
+                <button className={style.buttons} onClick={TestLink}>Test Link</button>
+                <button className={style.buttons} onClick={GitHubLink}>GitHub Link</button>
             </div>
 
             <div className={style.container} style={{backgroundColor: banner.bgcolor}}>
