@@ -100,11 +100,11 @@ export default function Demo() {
                 <div className={style.manual}>
                     <h1 className={style.titles}>Instructions</h1>
                     <ol className={style.list}>
-                        <li className={style.topics}>'Name' changes the title.</li>
-                        <li className={style.topics}>'Words' must be separated by ';' to change the animated text</li>
-                        <li className={style.topics}>'Font 1' changes the title font.</li>
-                        <li className={style.topics}>'Font 2' changes the font of the animated text.</li>
-                        <li className={style.topics}>Clicking the 'Link' button will copy the URL with the datafield of your modifications to your Clicking.</li>
+                        <li className={style.topics}>&#39;Name&#39; changes the title.</li>
+                        <li className={style.topics}>&#39;Words&#39; must be separated by &#39;;&#39; to change the animated text</li>
+                        <li className={style.topics}>&#39;Font 1&#39; changes the title font.</li>
+                        <li className={style.topics}>&#39;Font 2&#39; changes the font of the animated text.</li>
+                        <li className={style.topics}>Clicking the &#39;Link&#39; button will copy the URL with the datafield of your modifications to your Clicking.</li>
                     </ol>
                 </div>
 
