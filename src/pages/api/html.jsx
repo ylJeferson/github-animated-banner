@@ -8,6 +8,11 @@ const HTMLCode = ({bgcolor, name, namefont, namecolor, anim, animfont, animcolor
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=${namefont.split(" ").join("+")}&#38;family=${animfont.split(" ").join("+")}">
 
       <style>
+        * {
+          margin: 0;
+          padding: 0;
+        }
+
         html {
           width: 100%;
           height: 333px;
@@ -16,7 +21,7 @@ const HTMLCode = ({bgcolor, name, namefont, namecolor, anim, animfont, animcolor
         .container {
           width: 100%;
           height: 333px;
-
+          
           background-color: ${bgcolor};
         
           display: flex;
@@ -55,7 +60,7 @@ const HTMLCode = ({bgcolor, name, namefont, namecolor, anim, animfont, animcolor
 export default async (req, res) => {
   const isHTMLDebugMode = false
   const html = HTMLCode({
-    bgcolor: req.query.bgcolor || "transparent",
+    bgcolor: req.query.bgcolor || "Transparent",
   
     name: req.query.name || "Jeferson",
     namefont: req.query.namefont || "Tangerine",
@@ -73,7 +78,7 @@ export default async (req, res) => {
 
   const file = await getScreenshot(html, {width: 1920, height: 333})
 
-  res.setHeader('Content-Type', 'image/gif')
+  res.setHeader('Content-Type', 'image/png')
   res.end(file)
 }
 

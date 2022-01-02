@@ -50,7 +50,7 @@ export async function getScreenshot(html, {width, height}) {
   await page.setContent(html)
   await page.setViewport({width, height})
 
-  const file = await page.screenshot({ type: 'png' })
+  const file = await page.screenshot({type: 'png', omitBackground: true})
 
   return file
 }
