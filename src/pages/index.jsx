@@ -2,13 +2,10 @@ import {useEffect} from 'react'
 
 
 export default function Redirect() {
-    useEffect(() => {
-        window.location.assign('/demo')
-    })
-    
     return(
-        <>
-        </>
+        <div>
+          Hello, World!
+        </div>
     )
 }
 
