@@ -1,4 +1,4 @@
-import {getScreenshot} from '../../components/screenshot'
+import {screenshot} from '../../components/screenshot'
 
 const HTMLCode = ({bgcolor, name, namefont, namecolor, anim, animfont, animcolor}) => `
   <html lang="pt-br">
@@ -76,7 +76,7 @@ export default async (req, res) => {
     return res.end(html)
   }
 
-  const file = await getScreenshot(html, {width: 1920, height: 333})
+  const file = await screenshot(html, {width: 1920, height: 333})
 
   res.setHeader('Content-Type', 'image/png')
   res.end(file)
