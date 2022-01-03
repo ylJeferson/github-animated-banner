@@ -1,6 +1,6 @@
 import {getScreenshot} from '../../components/getScreenshot'
 
-const HTMLCode = ({bgcolor, name, namefont, namecolor, anim, animfont, animcolor}) => `
+const HTMLCode = ({bgcolor, name, namefont, namefontsize, namecolor, anim, animfont, animfontsize, animcolor}) => `
   <html lang="pt-br">
     <head>
       <meta charset="UTF-8">
@@ -31,14 +31,14 @@ const HTMLCode = ({bgcolor, name, namefont, namecolor, anim, animfont, animcolor
         }
         
         .name {
-          font-size: 7em;
+          font-size: ${namefontsize};
           font-weight: bold;
           color: ${namecolor};
           font-family: ${namefont};
         }
         
         .anim {
-          font-size: 3em;
+          font-size: ${animfontsize};
           font-weight: normal;
           color: ${animcolor};
           font-family: ${animfont};
@@ -63,12 +63,14 @@ export default async (req, res) => {
     bgcolor: req.query.bgcolor || "Transparent",
   
     name: req.query.name || "Jeferson",
-    namefont: req.query.namefont || "Tangerine",
     namecolor: req.query.namecolor || "#ff5779",
+    namefont: req.query.namefont || "Tangerine",
+    namefontsize: req.query.namefontsize || "7em",
   
     anim: req.query.anim || "In;search;of;development",
+    animcolor: req.query.animcolor || "#6941d3",
     animfont: req.query.animfont || "Varela Round",
-    animcolor: req.query.animcolor || "#6941d3"
+    animfontsize: req.query.animfontsize || "3em"
   })
   
   if (isHTMLDebugMode) {
