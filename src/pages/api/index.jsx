@@ -1,4 +1,4 @@
-import {getScreenshot} from '../../components/getScreenshot'
+import {getScreenshot} from '../../components/screenshot'
 
 const HTMLCode = ({bgcolor, name, namefont, namecolor, anim, animfont, animcolor}) => `
   <html lang="pt-br">

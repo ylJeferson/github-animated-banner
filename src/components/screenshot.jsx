@@ -1,7 +1,7 @@
 import puppeteer from 'puppeteer-core'
 import chrome from 'chrome-aws-lambda'
 
-export async function getOptions() {
+export async function Options() {
   const isDev = !process.env.AWS_REGION
   let options
 
@@ -31,12 +31,12 @@ export async function getOptions() {
 }
 
 let _page
-async function getPage() {
+async function Page() {
   if (_page) {
     return _page
   }
 
-  const options = await getOptions()
+  const options = await Options()
   const browser = await puppeteer.launch(options)
 
   _page = await browser.newPage()
@@ -44,8 +44,8 @@ async function getPage() {
   return _page
 }
 
-export async function getScreenshot(html, {width, height}) {
-  const page = await getPage()
+export async function Screenshot(html, {width, height}) {
+  const page = await Page()
 
   await page.setContent(html)
   await page.setViewport({width, height})
