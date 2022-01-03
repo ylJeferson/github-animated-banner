@@ -1,5 +1,5 @@
 {
-  "name": "github-animated-banner",
+  "name": "github-banner",
   "private": true,
   "scripts": {
     "dev": "next dev",

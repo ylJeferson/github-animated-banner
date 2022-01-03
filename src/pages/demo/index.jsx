@@ -43,7 +43,6 @@ export default function Demo() {
     
     function GitHubLink() {
         let Link = ((window.location.origin + '/api' + '?bgcolor=' + banner.bgcolor + '&name=' + banner.name + '&namefont=' + banner.namefont + '&namecolor=' + banner.namecolor + '&anim=' + banner.anim.join(";") + '&animfont=' + banner.animfont + '&animcolor=' + banner.animcolor).replaceAll(' ', '%20').replaceAll('#', '%23'))
-        console.log(Link)
         navigator.clipboard.writeText('[![' + banner.name + '\'s GitHub Banner](' + Link + ')](https://github.com/ylJeferson/github-animated-banner)')
     }
 
