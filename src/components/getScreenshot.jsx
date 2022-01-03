@@ -44,7 +44,7 @@ async function Page() {
   return _page
 }
 
-export async function Screenshot(html, {width, height}) {
+export async function getScreenshot(html, {width, height}) {
   const page = await Page()
 
   await page.setContent(html)
