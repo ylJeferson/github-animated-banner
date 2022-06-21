@@ -16,9 +16,6 @@
   </p>
 <!-- <p align="center">Love the project? Please consider <a href="https://www.paypal.me/yljeferson">donating</a> to help it improve! -->
 
-
-
-<br><br><br>
 # Features
 
 - [GitHub Banner](#github-banner)
@@ -26,11 +23,8 @@
   - [Options](#options)
   - [Examples](#examples)
 
+<br>
 
-
-
-
-<br><br><br>
 ## GitHub Banner
 
 Copy this and paste into your readme.md!
@@ -41,8 +35,10 @@ Very easy!
 ```
 
 _Note: On the link there are several parameters that you can be modifying to return a banner of your choice._
-  
-<br><br>
+
+
+<br>
+
 ## Customization
 
 You can customize the colors, fonts and names of your `Banner` as you like with the parameters in the URL.<br>
@@ -59,8 +55,6 @@ _Note: Special characters have to be encoded for URLs._
 - `animcolor` - Words color _(any css color)_.  (I recommend it be hex color)
 - `animfont` - Words Font _(google font name)_. (I recommend https://fonts.google.com/)
 - `animfontsize` - Words _(font-size)_. (I recommend using 'rem')
-
-
 
 ### Examples:
 
