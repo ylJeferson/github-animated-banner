@@ -8,9 +8,7 @@
 </p>
 
 <p align="center">
-    <a href="https://github-animated-banner.vercel.app/demo">View Demo</a>
-    ·
-    <a href="https://github-animated-banner.vercel.app/demo">Create Banner</a>
+    <a href="https://github-animated-banner.vercel.app/demo">Create Your Banner</a>
     ·
     <a href="https://github.com/ylJeferson/github-animated-banner/issues/new/choose">Report Bug</a>
   </p>
