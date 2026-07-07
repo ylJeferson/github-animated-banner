@@ -1,67 +1,72 @@
-<h1 align="center">Working in progress</h1>
-<br><br><br><br><br>
+# github-animated-banner
 
-<p align="center">
- <img width="100px" src="" align="center" alt="Image comes here" />
- <h2 align="center">GitHub Animated Banner</h2>
- <p align="center">Get a simply banner on your readmes!</p>
-</p>
+Projeto Next.js para gerar banners animados customizaveis para READMEs do GitHub via URL.
 
-<p align="center">
-    <a href="https://github-animated-banner.vercel.app/demo">Create Banner</a>
-    ·
-    <a href="https://github.com/ylJeferson/github-animated-banner/issues/new/choose">Report Bug</a>
-  </p>
-<!-- <p align="center">Love the project? Please consider <a href="https://www.paypal.me/yljeferson">donating</a> to help it improve! -->
+## diretrizes do projeto
 
-# Features
+- Seja extremamente conciso e foque apenas na resolucao do problema. Responda diretamente com o codigo, comando ou solucao necessaria, evitando rodeios, saudacoes formais e explicacoes longas, salvo quando forem solicitadas.
+- Este arquivo deve se chamar `readme.md`, totalmente em letras minusculas.
+- O `readme.md` deve documentar a estrutura do projeto, seu funcionamento e todas as diretrizes aplicaveis ao projeto.
+- Toda nova diretriz definida durante a conversa deve ser registrada no `readme.md` antes de qualquer implementacao relacionada.
+- Antes de alterar comportamento, entender o fluxo atual lendo `readme.md` e `src/pages/api/index.jsx`.
+- As mensagens de commit devem seguir o padrao `-m "[Tipo da Alteracao]: [Breve resumo referente a alteracao realizada]"`, usando um tipo derivado de verbo, como `Adicao`, `Correcao`, `Modificacao`, `Exclusao` ou `Ajuste`.
 
-- [GitHub Banner](#github-banner)
-- [Customization](#customization)
-  - [Options](#options)
-  - [Examples](#examples)
+## estrutura
 
-<br>
+- `src/pages/api/index.jsx`: endpoint `/api`; recebe parametros por query string, gera um SVG animado e retorna uma imagem.
+- `src/pages/demo/index.jsx`: pagina de demo; anima o texto no navegador usando React e `setInterval`.
+- `src/pages/index.jsx`: redireciona para outro repositorio.
+- `src/styles/demo.module.css`: estilos da pagina de demo.
+- `src/styles/globals.css`: estilos globais.
+- `public/`: favicons e assets estaticos.
+- `package.json`: scripts Next.js e dependencias.
 
-## GitHub Banner
-
-Copy this and paste into your readme.md!
-Very easy!
+## uso no README do GitHub
 
 ```md
-[![GitHub Banner](https://github-animated-banner.vercel.app/api?bgcolor=transparent&name=Jeferson&namefont=Tangerine&namecolor=%23ff5779&anim=In;search;of;development&animfont=Varela%20Round&animcolor=%236941d3&namefontsize=10rem&animfontsize=5em)](https://github.com/ylJeferson/github-animated-banner)
+[![GitHub Banner](https://github-animated-banner.vercel.app/api?bgcolor=transparent&name=Jeferson&namefont=Tangerine&namecolor=%23ff5779&anim=Sempre%20em%20busca%20do%20autodesenvolvimento&animfont=Varela%20Round&animcolor=%236941d3&namefontsize=10rem&animfontsize=5em)](https://github.com/ylJeferson/github-animated-banner)
 ```
 
-_Note: On the link there are several parameters that you can be modifying to return a banner of your choice._
+## parametros aceitos
 
+- `bgcolor`: cor de fundo.
+- `name`: titulo fixo.
+- `namecolor`: cor do titulo.
+- `namefont`: fonte Google do titulo.
+- `namefontsize`: tamanho do titulo.
+- `anim`: textos animados separados por `;`.
+- `animcolor`: cor dos textos animados.
+- `animfont`: fonte Google dos textos animados.
+- `animfontsize`: tamanho dos textos animados.
 
-<br>
+## funcionamento atual
 
-## Customization
+1. `/api` recebe os parametros por query string.
+2. O endpoint aplica valores padrao, limites de tamanho, sanitizacao simples e escape XML.
+3. `anim` e separado por `;`.
+4. Cada texto vira uma sequencia de frames com substrings progressivas.
+5. O SVG usa CSS interno para alternar os frames em loop, simulando escrita, pausa e apagamento.
+6. A resposta e enviada com `Content-Type: image/svg+xml; charset=utf-8`.
 
-You can customize the colors, fonts and names of your `Banner` as you like with the parameters in the URL.<br>
-_Note: Special characters have to be encoded for URLs._
-  
-### Options:
+O endpoint nao usa JavaScript no cliente, pagina HTML, Chromium, Puppeteer, GIF ou APNG. A animacao fica declarada dentro do proprio SVG, entao o link pode ser usado diretamente como imagem em um README do GitHub.
 
-- `bgcolor` - Banner background _(any css color)_
-- `name` - Title _(whatever title you want)_. (I recommend it be your name)
-- `namecolor` - Title color _(any css color)_.  (I recommend it be hex color)
-- `namefont` - Title Font _(google font name)_. (I recommend https://fonts.google.com/)
-- `namefontsize` - Title _(font-size)_. (I recommend using 'rem')
-- `anim` - Words _(any words you want, separated by ';')_. (I recommend it be your qualities)
-- `animcolor` - Words color _(any css color)_.  (I recommend it be hex color)
-- `animfont` - Words Font _(google font name)_. (I recommend https://fonts.google.com/)
-- `animfontsize` - Words _(font-size)_. (I recommend using 'rem')
+## detalhes da animacao
 
-### Examples:
+- Tamanho do SVG: `1920x333`.
+- Fundo: `<rect>` com `bgcolor`.
+- Titulo: `<text>` fixo com `name`.
+- Texto animado: varios `<text>` sobrepostos, cada um visivel apenas no seu intervalo.
+- Velocidade de escrita: `100ms` por caractere.
+- Velocidade de apagamento: `50ms` por caractere.
+- Pausa com texto completo: `1000ms`.
+- Intervalo entre textos: `500ms`.
+- Limites: `name` ate 120 caracteres, ate 12 textos em `anim`, cada texto de `anim` ate 80 caracteres.
 
-- `bgcolor` - bgcolor=_transparent_
-- `name` - name=_Example_
-- `namecolor` - namecolor=_rgb%28255,99,71%29_
-- `namefont` - namefont=_Tangerine_
-- `namefontsize` - namefontsize=_10rem_
-- `anim` - anim=_that's;what;this;is_
-- `animcolor` - animcolor=_%236941d3_
-- `animfont` - animfont=_Flow%20Rounded_
-- `animfontsize` - animfontsize=_5em_
+## scripts
+
+```bash
+npm run dev
+npm run build
+npm run start
+npm run lint
+```
