@@ -10,6 +10,7 @@ Projeto Next.js para gerar banners animados customizaveis para READMEs do GitHub
 - Toda nova diretriz definida durante a conversa deve ser registrada no `readme.md` antes de qualquer implementacao relacionada.
 - Antes de alterar comportamento, entender o fluxo atual lendo `readme.md` e `src/pages/api/index.jsx`.
 - As mensagens de commit devem seguir o padrao `-m "[Tipo da Alteracao]: [Breve resumo referente a alteracao realizada]"`, usando um tipo derivado de verbo, como `Adicao`, `Correcao`, `Modificacao`, `Exclusao` ou `Ajuste`.
+- Antes de publicar alteracoes no banner, validar o build de producao, o tipo `image/svg+xml` do endpoint publicado e a mudanca visual da animacao em instantes diferentes.
 
 ## estrutura
 
@@ -24,7 +25,7 @@ Projeto Next.js para gerar banners animados customizaveis para READMEs do GitHub
 ## uso no README do GitHub
 
 ```md
-[![GitHub Banner](https://github-animated-banner.vercel.app/api?bgcolor=transparent&name=Jeferson&namefont=Tangerine&namecolor=%23ff5779&anim=Sempre%20em%20busca%20do%20autodesenvolvimento&animfont=Varela%20Round&animcolor=%236941d3&namefontsize=10rem&animfontsize=5em)](https://github.com/ylJeferson/github-animated-banner)
+[![GitHub Banner](https://github-animated-banner.vercel.app/api?bgcolor=transparent&name=Jeferson&namefont=Tangerine&namecolor=%23ff5779&anim=Sempre%20em%20busca%20do%20autodesenvolvimento&animfont=Varela%20Round&animcolor=%236941d3&namefontsize=10rem&animfontsize=5em&v=2)](https://github.com/ylJeferson/github-animated-banner)
 ```
 
 ## parametros aceitos
@@ -63,6 +64,8 @@ O endpoint nao usa JavaScript no cliente, pagina HTML, Chromium, Puppeteer, GIF 
 - Limites: `name` ate 120 caracteres, ate 12 textos em `anim`, cada texto de `anim` ate 80 caracteres.
 
 ## scripts
+
+Requer Node.js 18.17 ou superior.
 
 ```bash
 npm run dev
