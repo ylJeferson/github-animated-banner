@@ -65,7 +65,7 @@ O endpoint nao usa JavaScript no cliente, pagina HTML, Chromium, Puppeteer, GIF 
 
 ## scripts
 
-Requer Node.js 18.17 ou superior.
+Requer Node.js 24.x.
 
 ```bash
 npm run dev
