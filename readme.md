@@ -19,7 +19,7 @@ Projeto Next.js para gerar banners animados customizaveis para READMEs do GitHub
 - `src/pages/index.jsx`: redireciona para outro repositorio.
 - `src/styles/demo.module.css`: estilos da pagina de demo.
 - `src/styles/globals.css`: estilos globais.
-- `public/`: favicons e assets estaticos.
+- `public/`: assets estaticos.
 - `package.json`: scripts Next.js e dependencias.
 
 ## uso no README do GitHub
