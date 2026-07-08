@@ -28,6 +28,8 @@ Projeto Next.js para gerar banners animados customizaveis para READMEs do GitHub
 [![GitHub Banner](https://github-animated-banner.vercel.app/api?bgcolor=transparent&name=Jeferson&namefont=Tangerine&namecolor=%23ff5779&anim=Sempre%20em%20busca%20do%20autodesenvolvimento&animfont=Varela%20Round&animcolor=%236941d3&namefontsize=10rem&animfontsize=5em&v=2)](https://github.com/ylJeferson/github-animated-banner)
 ```
 
+[![GitHub Banner](https://github-animated-banner.vercel.app/api?bgcolor=transparent&name=Jeferson&namefont=Tangerine&namecolor=%23ff5779&anim=Sempre%20em%20busca%20do%20autodesenvolvimento&animfont=Varela%20Round&animcolor=%236941d3&namefontsize=10rem&animfontsize=5em&v=2)](https://github.com/ylJeferson/github-animated-banner)
+
 ## parametros aceitos
 
 - `bgcolor`: cor de fundo.
