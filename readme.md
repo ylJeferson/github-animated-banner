@@ -1,16 +1,25 @@
-# github-animated-banner
+<p align="center">
+  <img src="https://github-animated-banner.vercel.app/api?bgcolor=transparent&name=GitHub%20Animated%20Banner&namefont=Tangerine&namecolor=%23ff5779&anim=SVGs%20animados%20para%20READMEs&animfont=Varela%20Round&animcolor=%236941d3&namefontsize=8rem&animfontsize=4em&v=2" alt="GitHub Animated Banner">
+</p>
 
-Projeto Next.js para gerar banners animados customizaveis para READMEs do GitHub via URL.
+<h1 align="center">github-animated-banner</h1>
 
-## diretrizes do projeto
+---
 
-- Seja extremamente conciso e foque apenas na resolucao do problema. Responda diretamente com o codigo, comando ou solucao necessaria, evitando rodeios, saudacoes formais e explicacoes longas, salvo quando forem solicitadas.
-- Este arquivo deve se chamar `readme.md`, totalmente em letras minusculas.
-- O `readme.md` deve documentar a estrutura do projeto, seu funcionamento e todas as diretrizes aplicaveis ao projeto.
-- Toda nova diretriz definida durante a conversa deve ser registrada no `readme.md` antes de qualquer implementacao relacionada.
-- Antes de alterar comportamento, entender o fluxo atual lendo `readme.md` e `src/pages/api/index.jsx`.
-- As mensagens de commit devem seguir o padrao `-m "[Tipo da Alteracao]: [Breve resumo referente a alteracao realizada]"`, usando um tipo derivado de verbo, como `Adicao`, `Correcao`, `Modificacao`, `Exclusao` ou `Ajuste`.
-- Antes de publicar alteracoes no banner, validar o build de producao, o tipo `image/svg+xml` do endpoint publicado e a mudanca visual da animacao em instantes diferentes.
+Gerador de banners SVG animados e customizaveis para READMEs do GitHub.
+
+<p align="center">
+  <a href="https://github.com/ylJeferson/github-animated-banner/issues/new">Reportar Bug</a>
+  ·
+  <a href="https://github.com/ylJeferson/github-animated-banner/issues/new">Sugerir Ideias</a>
+</p>
+
+## funcionalidades
+
+- Gera SVG animado por URL.
+- Personaliza textos, cores, fontes e tamanhos.
+- Simula escrita, pausa e apagamento em loop.
+- Funciona diretamente em READMEs do GitHub.
 
 ## estrutura
 
@@ -75,3 +84,15 @@ npm run build
 npm run start
 npm run lint
 ```
+
+## diretrizes
+
+As diretrizes especificas do projeto estao em [`guideline.md`](guideline.md).
+
+## licença
+
+Consulte [`LICENSE`](LICENSE).
+
+## autor
+
+[Jeferson Hugo da Silva](https://github.com/ylJeferson)
