@@ -14,7 +14,7 @@ const DEFAULTS = {
   namecolor: '#ff5779',
   namefont: 'Tangerine',
   namefontsize: '7em',
-  anim: 'In;search;of;development',
+  anim: 'Learning;Building;Improving',
   animcolor: '#6941d3',
   animfont: 'Varela Round',
   animfontsize: '3em'

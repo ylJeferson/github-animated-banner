@@ -1,4 +1,6 @@
-# Diretrizes do projeto
+# Project Guidelines
 
-- Antes de alterar o comportamento, entender o fluxo atual em `readme.md` e `src/pages/api/index.jsx`.
-- Antes de publicar alteracoes no banner, execute o build de producao, verifique se o endpoint publicado retorna `image/svg+xml` e confirme visualmente que a animacao muda entre instantes diferentes.
+- Use English for project documentation, interface text, code comments, and all new commit messages, including the commit type.
+- Use the English commit types `Addition`, `Correction`, `Refactoring`, `Documentation`, `Tests`, `Configuration`, `Maintenance`, or `Removal`, following the global rules for the summary and publication workflow.
+- Before changing behavior, understand the current flow in `readme.md` and `src/pages/api/index.jsx`.
+- Before publishing banner changes, run the production build, verify that the deployed endpoint returns `image/svg+xml`, and visually confirm that the animation changes between different points in time.

@@ -8,9 +8,11 @@
 
 .buttons {
     width: 15%;
+    min-width: 200px;
+    min-height: 44px;
     margin: 8px 8px;
     padding: 10px 18px;
-    height: max-content;
+    height: auto;
 
     border: none;
     color: #fff;
@@ -163,6 +165,15 @@
 	justify-content: center;
 }
 
+.box {
+    max-width: 100%;
+    padding: 0 16px;
+}
+
+.name, .anim {
+    overflow-wrap: anywhere;
+}
+
 .name {
 	font-size: 7em;
 	font-weight: bold;
@@ -186,11 +197,19 @@
 
     .buttons {
         width: 25%;
-        height: 8%;
+        height: auto;
     }
 }
 
 @media screen and (max-width: 600px) {
+    .name {
+        font-size: 3em;
+    }
+
+    .anim {
+        font-size: 1.5em;
+    }
+
     .namearea, .wordsarea {
         padding: 0;
         width: 100%;

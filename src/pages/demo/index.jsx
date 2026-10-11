@@ -1,10 +1,11 @@
 import {useEffect, useState} from 'react'
+import Head from 'next/head'
 import style from '../../styles/demo.module.css'
 
 export default function Demo() {
     const [animation, setAnimation] = useState({index: -1, value: ''})
     const [datafield, setDataField] = useState({bgcolor: '', name: '', namefont: '', namecolor: '', anim: '', animfont: '', animcolor: ''});
-    const [banner, setBanner] = useState({bgcolor: 'transparent', name: 'Hello I\'m Jeferson', namefont: 'Tangerine', namecolor: '#ff5779', anim: ['I made this banner', 'for you!!!', 'to use on your', 'github profile.', 'Liked!?', 'Give a little star', 'to this project', 'Thanks for reading this far', 'Enjoy!!!'], animfont: 'Varela Round', animcolor: '#6941d3'});
+    const [banner, setBanner] = useState({bgcolor: 'transparent', name: 'Hello, I\'m Jeferson', namefont: 'Tangerine', namecolor: '#ff5779', anim: ['Create your own banner', 'Add it to your GitHub profile', 'Make it your own', 'Star the project on GitHub', 'Thanks for stopping by'], animfont: 'Varela Round', animcolor: '#6941d3'});
 
     function ChangeDataField(e) {
         setDataField({...datafield, [e.target.name]: e.target.value})
@@ -98,6 +99,10 @@ export default function Demo() {
 
     return (
         <div className={style.window}>
+            <Head>
+                <title>GitHub Animated Banner</title>
+                <meta name='description' content='Create a customizable animated SVG banner for your GitHub README.' />
+            </Head>
             <link rel='stylesheet' href={'https://fonts.googleapis.com/css2?family=' + banner.namefont + '&display=swap'}></link>
             <link rel='stylesheet' href={'https://fonts.googleapis.com/css2?family=' + banner.animfont + '&display=swap'}></link>
 
@@ -105,38 +110,38 @@ export default function Demo() {
                 <div className={style.manual}>
                     <h1 className={style.titles}>Instructions</h1>
                     <ol className={style.list}>
-                        <li className={style.topics}>&#39;Name&#39; changes the title.</li>
-                        <li className={style.topics}>&#39;Words&#39; must be separated by &#39;;&#39; to change the animated text</li>
-                        <li className={style.topics}>&#39;Font 1&#39; changes the title font.</li>
-                        <li className={style.topics}>&#39;Font 2&#39; changes the font of the animated text.</li>
-                        <li className={style.topics}>Clicking the &#39;Link&#39; button will copy the URL with the datafield of your modifications to your Clicking.</li>
+                        <li className={style.topics}>&#39;Title&#39; sets the fixed text.</li>
+                        <li className={style.topics}>Separate animated phrases with &#39;;&#39;.</li>
+                        <li className={style.topics}>Each section has its own font and text color.</li>
+                        <li className={style.topics}>&#39;Preview&#39; applies your changes.</li>
+                        <li className={style.topics}>&#39;Copy Image URL&#39; copies the image link; &#39;Copy Markdown&#39; copies the README snippet.</li>
                     </ol>
                 </div>
 
                 <div className={style.inputs}>
-                    <h1 className={style.titles}>Data Fields</h1>
-                    <input className={style.bgcolor} onChange={ChangeDataField} value={datafield.bgcolor} id='bgcolor' name='bgcolor' placeholder='Background Color'></input>
+                    <h1 className={style.titles}>Banner Settings</h1>
+                    <input className={style.bgcolor} onChange={ChangeDataField} value={datafield.bgcolor} id='bgcolor' name='bgcolor' placeholder='Background color'></input>
 
                     <div className={style.dataarea}>
                         <div className={style.namearea}>
-                            <h2 className={style.titles}>Name</h2>
+                            <h2 className={style.titles}>Title</h2>
                             <input className={style.changedata} onChange={ChangeDataField} value={datafield.name} name='name' placeholder='Johnson Kutzniack'></input>
-                            <input className={style.changedata} onChange={ChangeDataField} value={datafield.namefont} name='namefont' placeholder='Google Font Name'></input>
-                            <input className={style.changedata} onChange={ChangeDataField} value={datafield.namecolor} name='namecolor' placeholder='Color'></input>
+                            <input className={style.changedata} onChange={ChangeDataField} value={datafield.namefont} name='namefont' placeholder='Google Fonts family'></input>
+                            <input className={style.changedata} onChange={ChangeDataField} value={datafield.namecolor} name='namecolor' placeholder='Text color'></input>
                         </div>
 
                         <div className={style.wordsarea}>
-                            <h2 className={style.titles}>Words</h2>
-                            <input className={style.changedata} onChange={ChangeDataField} value={datafield.anim} name='anim' placeholder='Word 1;Word2;Word3...'></input>
-                            <input className={style.changedata} onChange={ChangeDataField} value={datafield.animfont} name='animfont' placeholder='Google Font Name'></input>
-                            <input className={style.changedata} onChange={ChangeDataField} value={datafield.animcolor} name='animcolor' placeholder='Color'></input>
+                            <h2 className={style.titles}>Animated Phrases</h2>
+                            <input className={style.changedata} onChange={ChangeDataField} value={datafield.anim} name='anim' placeholder='Learning;Building;Improving'></input>
+                            <input className={style.changedata} onChange={ChangeDataField} value={datafield.animfont} name='animfont' placeholder='Google Fonts family'></input>
+                            <input className={style.changedata} onChange={ChangeDataField} value={datafield.animcolor} name='animcolor' placeholder='Text color'></input>
                         </div>
                     </div>
                 </div>
 
                 <button className={style.buttons} onClick={Preview}>Preview</button>
-                <button className={style.buttons} onClick={TestLink}>Test Link</button>
-                <button className={style.buttons} onClick={GitHubLink}>GitHub Link</button>
+                <button className={style.buttons} onClick={TestLink}>Copy Image URL</button>
+                <button className={style.buttons} onClick={GitHubLink}>Copy Markdown</button>
             </div>
 
             <div className={style.container} style={{backgroundColor: banner.bgcolor}}>
